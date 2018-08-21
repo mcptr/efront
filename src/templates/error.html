@@ -1,0 +1,8 @@
+<div class="{{!(it.data.className || 'error')}} error-code-{{!(it.data.code || '0')}}">
+  <div class="message">{{!it.data.message}}</div>
+  {{~it.data.details : detail}}
+  <div class="details">{{!detail}}</div>
+  {{~}}
+  <div class="errorId">{{!it.data.errorId}}</div>
+  <div class="traceback">{{!it.data.traceback}}</div>
+</div>

@@ -1,0 +1,77 @@
+{{?it.data.post}}
+<div class="posts post-details">
+  <div class="row">
+
+    <div class="col-xs-3 image">
+      <img src="{{!it.data.post.img_url}}" alt="..." title="image"/>
+    </div>
+
+    <div class="col-xs-9">
+      <p class="title">{{! it.data.post.title}}</p>
+      <ul class="list-inline">
+	<li><a href="/users/{{! it.data.post.author}}">@{{!it.data.post.author}}</a></li>
+	{{? it.data.post.language_code }}
+	<li>
+	  <a href="/geo/lang/{{! it.data.post.language_code}}">[{{! it.data.post.language_code.toUpperCase() }}]</a>
+	</li>
+	{{?}}
+	<li>
+	  (
+	  <a href="{{! it.data.post.src_url}}" title="{{! it.data.post.src_url}}" class="src-url" target="_blank" data-bypass="">
+	    <i class="glyphicon glyphicon-new-window"></i>
+	    {{! it.helpers.url.getDomain(it.data.post.src_url) }}
+	  </a>
+	  )
+	</li>
+      </ul>
+      <div class="meta">
+	<ul class="list-inline meta">
+	  <li>{{! it.helpers.datetime.unixToUTCDateTime(it.data.post.ctime) }}</li>
+	  <li><i class="glyphicon glyphicon-eye-open"></i> {{! (it.data.post.stat_views || "0")}}</li>
+	  <li>(<a href="/category/{{! it.data.post.category}}">{{! it.data.post.category}}</a>)</li>
+	</ul>
+	{{?it.data.post.tags}}
+	<ul class="list-inline meta">
+	  {{~ (it.data.post.tags.length > 10 ? it.data.post.tags.slice(0, 10) : it.data.post.tags) : tag}}
+	  <li class="tag"><a href="/tags/{{!tag }}">{{!tag}}</a></li>
+	  {{~}}
+	</ul>
+	{{?}}
+      </div>
+
+
+      <div class="description">
+	{{! it.data.post.description}}
+      </div>
+
+      <div class="score">
+	<span class="user-score">
+	  {{? it.data.post.top }}
+	  <i class="glyphicon glyphicon-fire top"></i>
+	  {{?? it.data.post.rising }}
+	  <i class="glyphicon glyphicon-star-empty rising"></i>
+	  {{?}}
+	  +{{! it.data.post.stat_votes_plus}} / -{{! it.data.post.stat_votes_minus}}
+	</span>
+	<span class="anonymous-score">
+	  (+{{! it.data.post.stat_anon_votes_plus}} / -{{! it.data.post.stat_anon_votes_minus}})
+	</span>
+	<span><a href="#" class="vote plus glyphicon glyphicon-plus" data-id="{{! it.data.post.id}}"> </a></span>
+	<span><a href="#" class="vote minus glyphicon glyphicon-minus" data-id="{{! it.data.post.id}}"> </a></span>
+	<span>
+	  <a href="#comments" data-bypass="">Comments: {{! (it.data.post.stat_total_comments || "0")}}</a>
+	</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+{{?}}
+
+<div class="posts post-comments">
+  <div class="comment-form"></div>
+  <div class="comments">
+    Loading comments...
+  </div>
+</div>
+

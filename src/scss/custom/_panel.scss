@@ -1,0 +1,16 @@
+@import "custom/vars";
+
+.side-panel {
+    padding-bottom: 10px;
+
+    .item {
+
+	&.tags ul {
+	    text-align: center;
+	    margin: 10px auto;
+	    padding: 10px 0;
+	    background: $lighter-gray;
+	    
+	}
+    }
+}

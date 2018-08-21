@@ -1,0 +1,53 @@
+@import "bootstrap/variables";
+
+$grid-striped-bg-odd: #fff;
+$grid-striped-bg-even: #f7f7f7;
+$default-grid-row-border-color: #ddd;
+
+$compact-view-break-point: $screen-xs;
+
+$content-category-undef: $gray-lighter;
+$content-category-dev: #4cb2b2;
+$content-category-net: #cbcc32;
+$content-category-sys: #7a65cc;
+$content-category-mobile: #cc5132;
+
+$default-sitemark-color: #0099ff;
+$brand-color: #0099ff;
+
+$light-gray: #bbb;
+$lighter-gray: #f6f6f6;
+$bright-gray: #fbfcfd;
+
+$error-text-color: darkred;
+
+// Basics of a navbar
+$navbar-height:                    50px !default;
+$navbar-margin-bottom:             $line-height-computed !default;
+$navbar-border-radius:             $border-radius-base !default;
+$navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
+$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+$navbar-collapse-max-height:       340px !default;
+
+$navbar-default-color:             #eee;
+$navbar-default-bg:                #2f2f2f;
+$navbar-default-border:            #2f2f2f;
+
+// Navbar links
+$navbar-default-link-color:                #fff;
+$navbar-default-link-hover-color:          #fff;
+$navbar-default-link-hover-bg:             lighten($navbar-default-bg, 20%);
+$navbar-default-link-active-color:         #fff;
+$navbar-default-link-active-bg:            $default-sitemark-color;
+$navbar-default-link-disabled-color:       #ccc !default;
+$navbar-default-link-disabled-bg:          transparent !default;
+
+// Navbar brand label
+$navbar-default-brand-color:               #fff;
+$navbar-default-brand-bg:                  $navbar-default-bg;
+$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%) !default;
+$navbar-default-brand-hover-bg:            transparent !default;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           #ddd !default;
+$navbar-default-toggle-icon-bar-bg:        #888 !default;

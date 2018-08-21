@@ -1,0 +1,21 @@
+{
+  "name": "front",
+  "version": "0.0.0",
+  "description": "",
+  "main": "gulp.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "requirejs": "~2.1.20",
+    "dot": "~1.0.3",
+    "mkdirp": "~0.5.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "Copyright"
+}

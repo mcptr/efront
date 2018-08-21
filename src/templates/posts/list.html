@@ -1,0 +1,75 @@
+<div class="posts grid-rows-spaced grid-striped">
+  {{~it.data : post : idx}}
+  <div class="row row-bordered">
+    <div class="col-sm-3 hidden-xs">
+      <div class="image">
+	{{? post.thumbnail_url && post.thumbnail_url.length }}
+	<img src="{{! post.thumbnail_url}}" alt="X" title="image" class="img-responsive center-block"/>
+	{{??}}
+	<i class="glyphicon glyphicon-eye-close"></i>
+	{{?}}
+      </div>
+    </div>
+
+    <div class="col-sm-9 col-xs-12 content">
+      <div class="content-data">
+	<strong>
+	  <a href="/post/{{!post.id}}" class="post-url">
+	    {{? post.content_type }}
+	    [{{! post.content_type.toUpperCase()}}]
+	    {{?}}
+	    {{! post.title}}
+	  </a>
+	</strong>
+	<ul class="list-inline">
+	  <li><a href="/users/{{!post.author}}">@{{! post.author}}</a></li>
+	  {{? post.language_code }}
+	  <li>
+	    <a href="/language/{{!post.language_code}}">[{{! post.language_code.toUpperCase()}}]</a>
+	  </li>
+	  {{?}}
+	  <li>
+	    (
+	    <a href="{{! post.src_url}}" title="{{! post.src_url}}" class="src-url" target="_blank" data-bypass="">
+	      <i class="glyphicon glyphicon-new-window"></i>
+	      {{! it.helpers.url.getDomain(post.src_url)}}
+	    </a>
+	    )
+	  </li>
+	</ul>
+	<p class="hidden-xs">
+	  {{! post.description }}
+	</p>
+	<div class="meta">
+	  <ul class="list-inline meta">
+	    <li>{{! it.helpers.datetime.unixToUTCDateTime(post.ctime) }}</li>
+	    <li><i class="glyphicon glyphicon-eye-open"></i> {{! post.stat_views}}</li>
+	    <li>(<a href="/category/{{!post.category_id}}/{{!post.category}}">{{!post.category}}</a>)</li>
+	    {{~ ((post.tags || []).length > 3 ? post.tags.slice(0, 3) : post.tags) : tag}}
+	    <li class="tag"><a href="/tags/{{!tag }}">{{!tag}}</a></li>
+	    {{~}}
+	  </ul>
+	</div>
+      </div>
+      <div class="score pull-left">
+	<span><a href="#" class="vote plus glyphicon glyphicon-plus" data-id="{{! post.id}}"> </a></span>
+	<span><a href="#" class="vote minus glyphicon glyphicon-minus" data-id="{{! post.id}}"> </a></span>
+	<span class="user-score">
+	  {{? post.top }}
+	  <i class="glyphicon glyphicon-fire top"></i>
+	  {{?? post.rising }}
+	  <i class="glyphicon glyphicon-star-empty rising"></i>
+	  {{?}}
+	  +{{! post.stat_votes_plus || "0"}} / -{{! post.stat_votes_minus || "0"}}
+	</span>
+	<span class="anonymous-score hidden-xs">
+	  (+{{! post.stat_anon_votes_plus || "0"}} / -{{! post.stat_anon_votes_minus || "0"}})
+	</span>
+	<span>
+	  <a href="/post/{{!post.id}}"><i class="glyphicon glyphicon-comment"></i> ({{!(post.stat_total_comments || "0")}})</a>
+	</span>
+      </div>
+    </div>
+  </div>
+  {{~}}
+</div>

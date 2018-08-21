@@ -1,0 +1,149 @@
+@import "custom/vars";
+
+
+textarea,
+input[type="text"],
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    font-size: 1em;
+    border-color: $light-gray;
+    color: $gray-dark;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+    box-shadow: none;
+    outline: 0 none;
+    color: $gray-dark;
+    border-color: $lighter-gray;
+}
+
+.form-control {
+    box-shadow: none;
+    color: $gray-dark;
+}
+
+.form-control:focus, .form-control:focus + div .btn {
+    box-shadow: none;
+    /* border-color: $light-gray; */
+}
+
+form {
+    .help {
+	color: $gray;
+    }
+
+    .image {
+	/* width: 300px; */
+	/* height: 200px; */
+	text-align: center;
+	vertical-align: middle;
+	/* border: 1px solid $light-gray; */
+	margin: 0 auto;
+
+	&:hover {
+	    cursor: pointer;
+	}
+
+	&.empty:before {
+	    font-weight: bold;
+	    content: "[img]";
+	    font-size: 3em;
+	    color: $light-gray;
+	}
+
+	/* img { */
+	/*     width: 100%; */
+	/*     height: auto; */
+	/*     display: inline-block; */
+	/* } */
+    }
+
+    .attachments {
+	button {
+	    &.add {
+	    }
+	}
+	ul {
+	    margin-top: 10px;
+	    li {
+		margin: 3px auto;
+
+		.filename {}
+		.filesize {
+		    color: $gray;
+		    font-size: 0.8em;
+		}
+	    }
+	}
+    }
+
+    .tags {
+	.item {
+	    font-size: 1em;
+	    color: $gray;
+	    background: #fff;
+	    ul {
+		li {
+		    border: 1px solid $light-gray;
+		    border-radius: 5px;
+		    margin-right: 3px;
+		}
+	    }
+	}
+    }
+
+    .image-controls {
+	text-align: center;
+    }
+}
+
+.error {
+    border-color: red;
+}
+
+.ajax-upload:before {
+    opacity: 0.1;
+}
+
+.ajax-upload {
+    display: block;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    z-index: 1000;
+    background-color: #fff;
+    background-image: url(/static/img/ajax-loader.gif);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    * {
+	opacity: 0.1;
+    }
+}

@@ -1,0 +1,37 @@
+@import "custom/vars";
+
+.navbar-default {
+    .navbar-brand {
+	color: $navbar-default-brand-color;
+	font-weight: bold;
+	background: $navbar-default-brand-bg;
+	&:hover,
+	&:focus {
+	    color: $navbar-default-brand-hover-color;
+	    background-color: $navbar-default-brand-hover-bg;
+	}
+    }
+
+    .navbar-nav {
+	> .active > a {
+	    &,
+	    &:hover,
+	    &:focus {
+		color: $navbar-default-link-active-color;
+		background-color: $navbar-default-link-active-bg;
+		font-weight: bold;
+	    }
+	}
+    }
+
+    .navbar-toggle {
+	&:active,
+	&:hover {
+	    background-color: #fff;
+	}
+
+	&:focus {
+	    background-color: $gray-lighter;
+	}
+    }
+}

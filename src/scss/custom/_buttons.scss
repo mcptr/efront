@@ -1,0 +1,20 @@
+@import "custom/vars";
+
+.btn-custom {
+    border-radius: 0;
+}
+
+.btn-small {
+    font-size: 0.9em;
+}
+
+.btn-mini {
+    font-size: 0.8em;
+}
+
+.btn-primary {
+    background-color: $default-sitemark-color;
+    &:hover {
+	background-color: darken($default-sitemark-color, 5%);
+    }
+}

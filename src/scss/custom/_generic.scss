@@ -1,0 +1,87 @@
+@import "custom/vars";
+
+body {
+    position: relative;
+}
+
+.grid-striped .row:nth-of-type(odd) {
+    background: $grid-striped-bg-odd;
+}
+
+.grid-striped .row:nth-of-type(even) {
+    background: $grid-striped-bg-even;
+}
+
+.grid-rows-spaced {
+    .row {
+	margin: auto;
+	margin-bottom: 15px;
+    }
+}
+
+.vcenter {
+    display: block;
+    vertical-align: middle;
+}
+
+.loading-indicator {
+    //opacity: 0.5;
+}
+
+.init-error {
+    padding: 10px;
+
+    .message {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: $error-text-color;
+    }
+
+    .errorId {
+	font-size: 0.9em;
+	color: $gray-light;
+    }
+
+    .traceback {
+	font-size: 0.8em;
+	color: $gray-light;
+    }
+}
+
+.load-error {
+    color: $error-text-color;
+    font-weight: bold;
+}
+
+@for $lvl from 1 through 10 {
+    .indent-right-$lvl {
+	padding-left: (30px * $lvl);
+    }
+}
+
+.error {
+    .message {
+	color: $error-text-color;
+	font-weight: bold;
+    }
+
+    .details {
+	
+    }
+
+    .traceback {
+	font-size: 0.85em;
+    }
+}
+
+.error-code-404 {
+    font-size: 1.5em;
+}
+
+.no-border {
+    border: 0;
+}
+
+.full-background {
+    background: #fff;
+}

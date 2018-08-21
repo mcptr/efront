@@ -1,0 +1,38 @@
+<div class="posts top-posts grid-striped">
+  <ul class="list-inline">
+    <li class="disabled"><a href="#a">Day</a></li>
+    <li><a href="#b">Week</a></li>
+    <li><a href="#c">Month</a></li>
+  </ul>
+  {{~it.data : post}}
+  <div class="row category {{! (post.category || 'undef')}}">
+
+    <div class="col-xs-4">
+      <div class="image">
+	{{? post.img_url && post.img_url.length }}
+	<img src="{{! post.img_url}}" alt="..." title="image"/>
+	{{??}}
+	<i class="glyphicon glyphicon-eye-close"></i>
+	{{?}}
+      </div>
+    </div>
+
+    <div class="col-xs-8">
+
+      <div><a href="/post/{{!post.id}}">{{!post.title}}</a></div>
+      <div class="score">
+	<span class="user-score">
+	  {{? post.top }}
+	  <i class="glyphicon glyphicon-fire top"></i>
+	  {{?? post.rising }}
+	  <i class="glyphicon glyphicon-star-empty rising"></i>
+	  {{?}}
+	  +{{! post.stat_votes_plus || "0"}} / -{{! post.stat_votes_minus || "0"}}
+	</span>
+      </div>
+
+    </div>
+
+  </div>
+  {{~}}
+</div>

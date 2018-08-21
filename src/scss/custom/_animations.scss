@@ -1,0 +1,33 @@
+@import "custom/vars";
+
+$animate-flash-speed: 0.3s;
+$animate-flash-count: 1;
+
+@mixin flash-effect() {
+    0% { opacity: 0; }
+    40% { opacity: 1; }
+    70% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.animate-flash {
+    -moz-animation: flash $animate-flash-speed ease-out;
+    -moz-animation-iteration-count: $animate-flash-count;
+    -webkit-animation: flash $animate-flash-speed ease-out;
+    -webkit-animation-iteration-count: $animate-flash-count;
+    -ms-animation: flash $animate-flash-speed ease-out;
+    -ms-animation-iteration-count: $animate-flash-count;
+}
+
+@-webkit-keyframes flash {
+    @include flash-effect();
+}
+
+@-moz-keyframes flash {
+    @include flash-effect();
+}
+
+@-ms-keyframes flash {
+    @include flash-effect();
+}
+

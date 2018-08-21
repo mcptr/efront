@@ -1,0 +1,92 @@
+<div class="form post-form">
+  <form name="new-post-form">
+    <div class="row">
+      <div class="col-xs-12">
+	<a href="#">[No URL? Create your own post]</a>
+	<hr/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+	<div class="form-group">
+	  <label>Image</label>
+	  <div class="image thumbnail empty">
+	  </div>
+	  <input type="hidden" name="image" tabindex="-1"/>
+	</div>
+	<div class="image-controls hidden">
+	  <a  href="#" class="btn btn-default btn-xs upload">
+	    <i class="glyphicon glyphicon-upload"></i>
+	    Change
+	  </a>
+	  <a  href="#" class="btn btn-default btn-xs remove">
+	    <i class="glyphicon glyphicon-remove"></i>
+	    Clear
+	  </a>
+	</div>
+	<hr/>
+	<div class="form-group attachments hidden">
+	  <label>Attachments</label>
+	  <br/>
+	  <a  href="#" class="btn btn-default btn-sm add"><i class="glyphicon glyphicon-plus"></i> Add attachment</a>
+	  <br/>
+	  <ul class="list-unstyled">
+	    <li>
+	      <a href="#" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-remove"></i></a>
+	      <span class="filename">test.jpg</span>
+	      <span class="filesize">(200kb)</span>
+	    </li>
+	    <li>
+	      <a href="#" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-remove"></i></a>
+	      <span class="filename">specification-upload-test.jpg</span>
+	      <span class="filesize">(12200.32 kb)</span>
+	    </li>
+	    <li>
+	      <a href="#" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-remove"></i></a>
+	      <span class="filename">specification-upload-test.jpg</span>
+	      <span class="filesize">(12200.32 kb)</span>
+	    </li>
+	  </ul>
+	</div>
+
+      </div>
+      <div class="col-md-8 fulls-background">
+	<div class="form-group">
+	  <label for="post-form-title">Post title</label>
+	  <input name="title" class="form-control" id="post-form-title" placeholder="New post..." maxlength="128"/>
+	</div>
+	<div class="form-group">
+	  <label for="post-form-description">Description</label>
+	  <textarea name="description" class="form-control" id="post-form-description" rows="3" placeholder="Short description (visible on posts list)"></textarea>
+	</div>
+	<div class="form-group">
+	  <label for="post-form-url">URL</label>
+	  <input name="url" class="form-control" id="post-form-url" placeholder="http://example.com"/>
+	</div>
+	<div class="form-group">
+	  <label for="post-form-category">Category</label>
+	  <input name="category" class="form-control" id="post-form-category" placeholder="Category (typeahead)" type="text"
+		 autocomplete="off" />
+	</div>
+	<div class="form-group">
+	  <label for="post-form-tags">Tags</label>
+	  <select name="tags" class="form-control" id="post-form-tags" placeholder="Tags (typeahead)" autocomplete="off"/>
+	</div>
+	<!-- <div class="form-group"> -->
+	<!--   <label for="post-form-category">Channel?</label> -->
+	<!--   <select name="channel" class="form-control" id="post-form-channel" placeholder="Channel?"> -->
+	<!--   </select> -->
+	<!-- </div> -->
+      </div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-xs-12">
+	<div class="pull-right">
+	  <a href="#" class="btn btn-default" id="post-form-button-preview">Preview</a>
+	  <a class="btn btn-primary" id="post-form-button-publish">Publish now</a>
+	</div>
+      </div>
+    </div>
+  </form>
+</div>

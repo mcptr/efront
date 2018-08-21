@@ -1,0 +1,103 @@
+<div class="posts comments grid-striped">
+  <hr/>
+  {{~it.data : comment}}
+  <div class="{{!(!comment.lvl ? 'thread' : '')}}">
+    <div class="indent-right-{{!(comment.lvl > 5 ? 5 : comment.lvl)}}">
+      <div class="comment" id="comment-{{!comment.id}}" data-id="{{!comment.id}}">
+	<div class="row">
+	  <div class="col-xs-1 user-avatar">
+	    {{?!comment.user_avatar}}
+	    <img src="/static/img/user.png" alt=""></img>
+	    {{??}}
+	    <i class="glyphicon glyphicon-user"></i>
+	    {{?}}
+	  </div>
+	  <div class="col-xs-11">
+	    <div class="meta clearfix">
+	      <div class="pull-left">
+		<ul class="list-inline list-unstyled">
+		  <li>
+		    <strong>
+		      <a href="/user/{{!comment.author_id}}/{{!comment.author}}">
+			{{? !comment.user_active }}
+			    <del>{{!comment.author}}</del>
+			{{??}}
+			    {{!comment.author}}
+			{{?}}
+		      </a>
+		    </strong>
+		  </li>
+		  <li>
+		    ({{!it.helpers.datetime.unixToUTCDateTime(comment.ctime)}})
+		  </li>
+		  <li>
+		    
+		    <a href="#comment-{{!comment.id}}" data-bypass="">
+		      #{{!comment.id}}
+		    </a>
+		  </li>
+		</ul>
+	      </div>
+	      <div class="pull-right">
+		<span><a href="#" class="vote plus glyphicon glyphicon-plus" data-id="{{!comment.id}}"> </a></span>
+		<span><a href="#" class="vote minus glyphicon glyphicon-minus" data-id="{{!comment.id}}"> </a></span>
+		<span class="score"><strong>{{!(comment.score || "0")}}</strong></span>
+	      </div>
+	    </div>
+	    <div class="content">
+	      {{? comment.deleted }}
+                <span class="comment-deleted">
+		  Comment removed
+		  {{? comment.deleted_by.length }}
+		    by {{!comment.deleted_by}}
+		  {{?}}
+		</span>
+	      {{??}}
+		<span class="text">{{=it.helpers.markup.render(comment.content)}}</span>
+	      {{?}}
+	    </div>
+	    <div class="actions">
+ 	      {{? it.user.id }}
+	      <ul class="list-inline list-unstyled">
+ 		{{? !comment.deleted }}
+		<li>
+		  <a href="#" class="link-reply">
+		    <i class="glyphicon glyphicon-share-alt"></i> Reply
+		  </a>
+		</li>
+		{{?}}
+		<!-- <li> -->
+		<!--   <a href="#"> -->
+		<!--     <i class="glyphicon glyphicon-flag"></i> Report -->
+		<!--   </a> -->
+		<!-- </li> -->
+
+		{{?it.user.id == comment.user_id && !comment.deleted}}
+		<li>
+		  <a href="#" class="link-edit">
+		    <i class="glyphicon glyphicon-edit"></i> Edit
+		  </a>
+		</li>
+
+		<li>
+		  <a href="#" class="link-remove">
+		    <i class="glyphicon glyphicon-remove"></i> Delete
+		  </a>
+		</li>
+		{{?}}
+
+		<!-- <li> -->
+		<!--   <a href="#"> -->
+		<!--     <i class="glyphicon glyphicon-star"></i> Save -->
+		<!--   </a> -->
+		<!-- </li> -->
+	      </ul>
+	      {{?}}
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+    {{~}}
+  </div>
+</div>
